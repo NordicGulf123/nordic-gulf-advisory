@@ -35,8 +35,8 @@ export default function Contact() {
             <img src="/images/nordic-gulf-logo.png" alt="Nordic Gulf" className="h-12 cursor-pointer" />
           </Link>
           <div className="hidden md:flex gap-8">
-            <Link href="/#strategies"><a className="text-sm hover:text-primary transition">Strategies</a></Link>
-            <Link href="/#why-dubai"><a className="text-sm hover:text-primary transition">Why Dubai</a></Link>
+            <a href="/#strategies" className="text-sm hover:text-primary transition">Strategies</a>
+            <a href="/#why-dubai" className="text-sm hover:text-primary transition">Why Dubai</a>
             <Link href="/properties"><a className="text-sm hover:text-primary transition">Properties</a></Link>
             <Link href="/blog"><a className="text-sm hover:text-primary transition">Blog</a></Link>
             <Link href="/contact"><a className="text-sm hover:text-primary transition font-semibold">Contact</a></Link>
