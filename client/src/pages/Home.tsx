@@ -15,7 +15,7 @@ export default function HomePage() {
       <nav className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
-            <img src="/images/nordic-gulf-logo.png" alt="Nordic Gulf" className="h-12 cursor-pointer" />
+            <img src="/images/nordic-gulf-logo.png" alt="Nordic Gulf" className="h-16 cursor-pointer" />
           </Link>
           <div className="hidden md:flex gap-8">
             <a href="#strategies" className="text-sm hover:text-primary transition">Strategies</a>
