@@ -14,9 +14,7 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/">
-            <img src="/images/nordic-gulf-logo.png" alt="Nordic Gulf" className="h-16 cursor-pointer" />
-          </Link>
+          <Link href="/" className="text-xl font-bold text-primary">Nordic Gulf</Link>
           <div className="hidden md:flex gap-8">
             <a href="#strategies" className="text-sm hover:text-primary transition">Strategies</a>
             <a href="#why-dubai" className="text-sm hover:text-primary transition">Why Dubai</a>
@@ -25,7 +23,9 @@ export default function HomePage() {
             <Link href="/blog" className="text-sm hover:text-primary transition">Blog</Link>
             <Link href="/contact" className="text-sm hover:text-primary transition">Contact</Link>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          </a>
         </div>
       </nav>
 
@@ -41,44 +41,63 @@ export default function HomePage() {
                 13+ years of direct developer experience. Scandinavian transparency. Expert guidance for your Dubai investment journey.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Schedule Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    Schedule Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
                 <Button size="lg" variant="outline">
                   Explore Options
                 </Button>
               </div>
             </div>
-            <div className="relative h-96 md:h-full rounded-lg overflow-hidden shadow-2xl">
-              <img 
-                src="/images/dubai-skyline-hero.jpg" 
-                alt="Dubai Skyline" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative h-96 rounded-lg overflow-hidden">
+              <img src="/images/dubai-skyline-hero.jpg" alt="Dubai Skyline" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Buyer-First Advisory Section */}
+      {/* Buyer Advisory Section */}
       <BuyerAdvisorySection />
 
       {/* Market Statistics */}
-      <section className="py-16 bg-card border-y border-border">
+      <section className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Dubai's Real Estate Market at a Glance</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: "226,000", label: "Transactions in 2024" },
-              { value: "AED 761B", label: "Transaction Value" },
-              { value: "110,000", label: "New Investors" },
-              { value: "5.7%", label: "Population Growth" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center p-6 bg-background rounded-lg border border-border hover:border-primary transition">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+          <h2 className="text-4xl font-bold mb-12">Dubai Real Estate Market 2025</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-5xl text-primary">226K</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Transactions in 2024</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-5xl text-primary">32.2%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Villa price growth (2025)</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-5xl text-primary">5-8%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Average rental yield</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-5xl text-primary">0%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Capital gains tax</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -86,72 +105,92 @@ export default function HomePage() {
       {/* Investment Strategies */}
       <section id="strategies" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4">Investment Strategies</h2>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-            Choose the strategy that aligns with your investment goals and timeline.
-          </p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: HomeIcon,
-                title: "Buy-to-Let",
-                description: "Generate consistent rental income with 6-9% gross yields",
-                highlight: "Income Focus"
-              },
-              {
-                icon: TrendingUp,
-                title: "Capital Appreciation",
-                description: "Invest in emerging areas for significant growth potential",
-                highlight: "Growth Focus"
-              },
-              {
-                icon: Briefcase,
-                title: "Golden Visa",
-                description: "Secure 10-year residency while building wealth",
-                highlight: "Residency + Returns"
-              },
-              {
-                icon: PieChart,
-                title: "Portfolio Mix",
-                description: "Diversify across multiple strategies and locations",
-                highlight: "Balanced Approach"
-              }
-            ].map((strategy, i) => {
-              const Icon = strategy.icon;
-              return (
-                <Card key={i} className="hover:shadow-lg transition border-border hover:border-primary">
-                  <CardHeader>
-                    <Icon className="w-8 h-8 text-accent mb-4" />
-                    <CardTitle>{strategy.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">{strategy.description}</p>
-                    <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded">
-                      {strategy.highlight}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <h2 className="text-4xl font-bold mb-12">Investment Strategies</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-primary">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <HomeIcon className="w-5 h-5 text-primary" />
+                  Buy-to-Let
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">Generate consistent rental income from premium properties with 5-8% annual yields</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ Stable monthly income</li>
+                  <li>✓ Property appreciation</li>
+                  <li>✓ Tax-efficient returns</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  Capital Appreciation
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">Invest in emerging areas with high growth potential - villas up 32% in 2025</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ High growth areas</li>
+                  <li>✓ Long-term appreciation</li>
+                  <li>✓ Developer-backed projects</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                  Golden Visa
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">Invest AED 2M+ for residency and build wealth simultaneously</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ 10-year residency</li>
+                  <li>✓ Family sponsorship</li>
+                  <li>✓ Investment returns</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <PieChart className="w-5 h-5 text-primary" />
+                  Portfolio Mix
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">Diversify across rental income, appreciation, and residency benefits</p>
+                <ul className="space-y-2 text-sm">
+                  <li>✓ Balanced approach</li>
+                  <li>✓ Risk mitigation</li>
+                  <li>✓ Multiple income streams</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Why Dubai */}
-      <section id="why-dubai" className="py-20 bg-secondary/30">
+      <section id="why-dubai" className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12">Why Dubai Outperforms European Markets</h2>
-          
+          <h2 className="text-4xl font-bold mb-12">Why Dubai for European Investors</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Tax & Financial Advantages</h3>
+              <h3 className="text-2xl font-semibold mb-6">Tax Advantages</h3>
               <div className="space-y-4">
                 {[
                   { label: "Capital Gains Tax", dubai: "0%", europe: "18-28%" },
                   { label: "Rental Income Tax", dubai: "0%", europe: "20-45%" },
                   { label: "Annual Property Tax", dubai: "0%", europe: "0.5-2%" },
-                  { label: "Rental Yields", dubai: "5.45-9%", europe: "2-3%" }
+                  { label: "Rental Yields", dubai: "5-8%", europe: "2-3%" }
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center p-4 bg-background rounded-lg border border-border">
                     <span className="font-medium">{item.label}</span>
@@ -208,14 +247,14 @@ export default function HomePage() {
       <section id="investment-options" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4">Investment Options by Budget</h2>
-          <p className="text-lg text-muted-foreground mb-12">Find the perfect investment tier for your financial goals</p>
+          <p className="text-lg text-muted-foreground mb-12">Find the perfect investment tier for your financial goals (2025 Market Prices)</p>
 
           <div className="grid md:grid-cols-4 gap-4 mb-12">
             {[
-              { id: "entry", label: "Entry-Level", range: "€120K - €240K" },
-              { id: "mid-range", label: "Mid-Range", range: "€240K - €720K" },
-              { id: "premium", label: "Premium", range: "€720K - €2.4M" },
-              { id: "ultra", label: "Ultra-Luxury", range: "€2.4M+" }
+              { id: "entry", label: "Entry-Level", range: "€200K - €400K" },
+              { id: "mid-range", label: "Mid-Range", range: "€600K - €1.6M" },
+              { id: "premium", label: "Premium", range: "€1.1M - €4M" },
+              { id: "ultra", label: "Ultra-Luxury", range: "€2.7M+" }
             ].map((tier) => (
               <button
                 key={tier.id}
@@ -237,29 +276,31 @@ export default function HomePage() {
               <>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Jumeirah Village Circle (JVC)</CardTitle>
-                    <CardDescription>€120K - €180K</CardDescription>
+                    <CardTitle>Dubai Silicon Oasis (DSO)</CardTitle>
+                    <CardDescription>AED 750K - 1.2M (€200K - €320K)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Modern apartments with excellent rental demand and community amenities</p>
+                    <p className="text-sm mb-4">Studio & 1-bed apartments. Fastest growing area with 29% price increase in 2025</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ 6-7% rental yield</div>
-                      <div>✓ Strong expat community</div>
-                      <div>✓ Growing infrastructure</div>
+                      <div>✓ 5-6% rental yield</div>
+                      <div>✓ 29% annual growth (2025)</div>
+                      <div>✓ Tech hub community</div>
+                      <div className="text-xs text-muted-foreground mt-2">Source: Property Finder, Bayut 2025</div>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Dubai South</CardTitle>
-                    <CardDescription>€180K - €240K</CardDescription>
+                    <CardTitle>Jumeirah Village Circle (JVC)</CardTitle>
+                    <CardDescription>AED 1.1M - 1.5M (€290K - €400K)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Emerging area with major infrastructure development and high growth potential</p>
+                    <p className="text-sm mb-4">Modern 1-2 bed apartments with excellent rental demand</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ High appreciation potential</div>
-                      <div>✓ New developments</div>
-                      <div>✓ Strategic location</div>
+                      <div>✓ 6-7% rental yield</div>
+                      <div>✓ Strong expat community</div>
+                      <div>✓ Growing infrastructure</div>
+                      <div className="text-xs text-muted-foreground mt-2">Avg: AED 1,150/sqft</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -270,29 +311,31 @@ export default function HomePage() {
               <>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Dubai Hills Estate</CardTitle>
-                    <CardDescription>€240K - €480K</CardDescription>
+                    <CardTitle>Jumeirah Beach Residence (JBR)</CardTitle>
+                    <CardDescription>AED 2.2M - 4M (€580K - €1.1M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Established community with villas and apartments, excellent lifestyle amenities</p>
+                    <p className="text-sm mb-4">Iconic beachfront community. 2-3 bed apartments with strong short-term rental appeal</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ Balanced returns</div>
-                      <div>✓ Premium community</div>
-                      <div>✓ Strong resale value</div>
+                      <div>✓ 5-8% rental yield</div>
+                      <div>✓ Beachfront location</div>
+                      <div>✓ Tourism demand</div>
+                      <div className="text-xs text-muted-foreground mt-2">AED 2,000-2,800/sqft</div>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Arabian Ranches</CardTitle>
-                    <CardDescription>€480K - €720K</CardDescription>
+                    <CardTitle>Arabian Ranches (Villas)</CardTitle>
+                    <CardDescription>AED 3.7M - 6M (€980K - €1.6M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Luxury villa community with strong capital appreciation and lifestyle appeal</p>
+                    <p className="text-sm mb-4">3-4 bed luxury villas. 32.2% price growth in 2025. Strong capital appreciation</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ Premium positioning</div>
-                      <div>✓ Strong appreciation</div>
-                      <div>✓ Exclusive community</div>
+                      <div>✓ 32.2% annual growth (2025)</div>
+                      <div>✓ Premium community</div>
+                      <div>✓ Strong resale value</div>
+                      <div className="text-xs text-muted-foreground mt-2">Avg villa: AED 5.2M</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -303,29 +346,31 @@ export default function HomePage() {
               <>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Dubai Marina</CardTitle>
-                    <CardDescription>€720K - €1.5M</CardDescription>
+                    <CardTitle>Dubai Marina (Luxury Apartments)</CardTitle>
+                    <CardDescription>AED 4M - 8M (€1.1M - €2.1M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Iconic waterfront location with premium apartments and strong rental demand</p>
+                    <p className="text-sm mb-4">Iconic waterfront. 2-3 bed luxury apartments with strong rental demand</p>
                     <div className="space-y-2 text-sm">
                       <div>✓ 5-7% rental yield</div>
-                      <div>✓ Prime location</div>
+                      <div>✓ Prime waterfront location</div>
                       <div>✓ Global recognition</div>
+                      <div className="text-xs text-muted-foreground mt-2">AED 1,700-2,600/sqft</div>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Palm Jumeirah</CardTitle>
-                    <CardDescription>€1.5M - €2.4M</CardDescription>
+                    <CardTitle>Palm Jumeirah (Villas)</CardTitle>
+                    <CardDescription>AED 7M - 15M (€1.9M - €4M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Ultra-luxury island development with exclusive properties and strong appreciation</p>
+                    <p className="text-sm mb-4">Ultra-luxury island villas with exclusive positioning and strong appreciation</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ Exclusive positioning</div>
-                      <div>✓ Strong appreciation</div>
-                      <div>✓ Luxury lifestyle</div>
+                      <div>✓ Ultra-premium positioning</div>
+                      <div>✓ Strong capital appreciation</div>
+                      <div>✓ Exclusive lifestyle</div>
+                      <div className="text-xs text-muted-foreground mt-2">Source: Property Finder 2025</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -336,29 +381,31 @@ export default function HomePage() {
               <>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Emirates Hills</CardTitle>
-                    <CardDescription>€2.4M+</CardDescription>
+                    <CardTitle>Emirates Hills (Luxury Villas)</CardTitle>
+                    <CardDescription>AED 10M - 25M (€2.7M - €6.7M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Ultra-luxury hillside villas with panoramic views and exclusive community</p>
+                    <p className="text-sm mb-4">Ultra-luxury hillside villas with panoramic views. Premium investment for high-net-worth</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ Premium positioning</div>
+                      <div>✓ Ultra-premium positioning</div>
                       <div>✓ Exclusive location</div>
                       <div>✓ Strong capital appreciation</div>
+                      <div className="text-xs text-muted-foreground mt-2">Avg villa: AED 5.2M (32% growth 2025)</div>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-primary bg-primary/5">
                   <CardHeader>
-                    <CardTitle>Bulgari Residences</CardTitle>
-                    <CardDescription>€2.4M+</CardDescription>
+                    <CardTitle>Downtown Dubai - Penthouse</CardTitle>
+                    <CardDescription>AED 6M - 20M (€1.6M - €5.3M)</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm mb-4">Iconic luxury brand residences with world-class amenities and design</p>
+                    <p className="text-sm mb-4">Iconic downtown location with luxury penthouses overlooking Burj Khalifa</p>
                     <div className="space-y-2 text-sm">
-                      <div>✓ Brand prestige</div>
-                      <div>✓ Ultra-luxury positioning</div>
-                      <div>✓ Strong investment value</div>
+                      <div>✓ Iconic location</div>
+                      <div>✓ Strong appreciation potential</div>
+                      <div>✓ Premium lifestyle</div>
+                      <div className="text-xs text-muted-foreground mt-2">Penthouse range: AED 6.8M - 105M</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -369,128 +416,87 @@ export default function HomePage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12">How It Works</h2>
-          
-          <div className="grid md:grid-cols-6 gap-4 mb-12">
+          <div className="grid md:grid-cols-6 gap-4">
             {[
-              { step: "1", title: "Consultation", desc: "Discuss goals & strategy" },
-              { step: "2", title: "Search", desc: "Find perfect property" },
-              { step: "3", title: "Due Diligence", desc: "Verify & analyze" },
-              { step: "4", title: "MOU", desc: "Agreement signed" },
-              { step: "5", title: "NOC", desc: "Developer approval" },
-              { step: "6", title: "Transfer", desc: "Ownership secured" }
+              { step: "1", title: "Consultation", desc: "Understand your goals & budget" },
+              { step: "2", title: "Analysis", desc: "Market research & property matching" },
+              { step: "3", title: "Selection", desc: "Review options & negotiate" },
+              { step: "4", title: "Due Diligence", desc: "Legal & financial review" },
+              { step: "5", title: "Transaction", desc: "Complete purchase & registration" },
+              { step: "6", title: "Management", desc: "Ongoing support & optimization" }
             ].map((item, i) => (
               <div key={i} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold mx-auto mb-3">
-                  {item.step}
-                </div>
-                <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
-                <p className="text-xs text-muted-foreground">{item.desc}</p>
+                <div className="w-12 h-12 rounded-full bg-primary text-background font-bold flex items-center justify-center mx-auto mb-4">{item.step}</div>
+                <h4 className="font-semibold mb-2">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
-
-          <Card className="border-border">
-            <CardHeader>
-              <CardTitle>Transparent Fee Structure</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-2">4%</div>
-                  <p className="text-sm text-muted-foreground">Dubai Land Department Transfer Fee</p>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-2">2%</div>
-                  <p className="text-sm text-muted-foreground">Real Estate Agency Fee</p>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-2">Varies</div>
-                  <p className="text-sm text-muted-foreground">Developer Fees (off-plan)</p>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground mt-6 pt-6 border-t border-border">
-                All costs are clearly disclosed upfront with no hidden fees. Our commitment is to provide you with complete transparency throughout your investment journey.
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Newsletter Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated with Market Insights</h2>
-          <p className="text-lg opacity-90 mb-8">
-            Subscribe to our newsletter for exclusive market analysis, investment opportunities, and buyer education delivered to your inbox.
-          </p>
-          <div className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-0 bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-            />
-            <Button className="bg-accent hover:bg-accent/90 text-white">Subscribe</Button>
+      {/* Newsletter */}
+      <section className="py-20 bg-primary text-background">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Stay Updated on Dubai Market</h2>
+          <p className="text-lg mb-8 opacity-90">Get exclusive insights, investment opportunities, and market analysis delivered to your inbox</p>
+          <div className="flex gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Your email" className="flex-1 px-4 py-3 rounded-lg bg-background text-foreground" />
+            <Button className="bg-background text-primary hover:bg-background/90">Subscribe</Button>
           </div>
-          <p className="text-xs opacity-75 mt-3">We respect your privacy. Unsubscribe anytime.</p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 bg-primary text-white">
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-background">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Dubai Investment Journey?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Schedule a free, no-obligation consultation with our expert advisors. We will discuss your investment goals and create a personalized strategy.
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Dubai Investment?</h2>
+          <p className="text-xl mb-8 opacity-90">Schedule a free 20-minute consultation with our expert advisors</p>
+          <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-background text-primary hover:bg-background/90">
               Book Your Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white border-t border-border py-12">
+      <footer className="bg-background border-t border-border py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">Nordic Gulf</h3>
-              <p className="text-sm opacity-90">Your trusted partner for premium UAE real estate investments.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="opacity-75 hover:opacity-100 transition">About Us</a></li>
-                <li><a href="#" className="opacity-75 hover:opacity-100 transition">Our Team</a></li>
-                <li><Link href="/blog"><a className="opacity-75 hover:opacity-100 transition">Blog</a></Link></li>
-              </ul>
+              <h4 className="font-semibold mb-4">Nordic Gulf Advisory</h4>
+              <p className="text-sm text-muted-foreground">Your trusted partner for UAE real estate investment</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="opacity-75 hover:opacity-100 transition">Investment Advisory</a></li>
-                <li><a href="#" className="opacity-75 hover:opacity-100 transition">Property Management</a></li>
-                <li><a href="#" className="opacity-75 hover:opacity-100 transition">Webinars</a></li>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#strategies" className="hover:text-primary">Investment Strategies</a></li>
+                <li><a href="/properties" className="hover:text-primary">Properties</a></li>
+                <li><a href="/blog" className="hover:text-primary">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="/contact" className="hover:text-primary">Contact</a></li>
+                <li><a href="/business-setup" className="hover:text-primary">Business Setup</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm">
-                <li className="opacity-90">Email: info@nordicgulfadvisory.com</li>
-                <li className="opacity-90">Phone: +47 XXX XX XXX</li>
-                <li className="opacity-90">Stavanger, Norway</li>
-              </ul>
+              <p className="text-sm text-muted-foreground">Email: info@nordicgulfadvisory.com</p>
+              <p className="text-sm text-muted-foreground">Phone: +971 4 XXX XXXX</p>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-8 text-center text-sm opacity-75">
-            <p>&copy; 2025 Nordic Gulf Property Advisory. All rights reserved.</p>
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2025 Nordic Gulf Advisory. All rights reserved.</p>
           </div>
         </div>
       </footer>

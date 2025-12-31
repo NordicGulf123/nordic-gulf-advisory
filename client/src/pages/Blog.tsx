@@ -77,7 +77,9 @@ export default function Blog() {
             <Link href="/blog" className="text-sm hover:text-primary transition">Blog</Link>
             <Link href="/contact" className="text-sm hover:text-primary transition">Contact</Link>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          </a>
         </div>
       </nav>
 

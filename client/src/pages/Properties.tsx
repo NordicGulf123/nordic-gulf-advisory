@@ -88,7 +88,9 @@ export default function Properties() {
             <Link href="/blog" className="text-sm hover:text-primary transition">Blog</Link>
             <Link href="/contact" className="text-sm hover:text-primary transition">Contact</Link>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
+          </a>
         </div>
       </nav>
 
@@ -160,9 +162,11 @@ export default function Properties() {
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
             Schedule a consultation with our advisors to discuss which property and strategy aligns best with your investment goals.
           </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-            Book Your Consultation <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          <a href="https://calendly.com/nordicgulfadvisory-support/uae-real-estate-advisory-call" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+              Book Your Consultation <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </a>
         </div>
       </section>
 
