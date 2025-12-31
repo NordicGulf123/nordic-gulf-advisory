@@ -84,9 +84,9 @@ export default function Properties() {
           <div className="hidden md:flex gap-8">
             <a href="/#strategies" className="text-sm hover:text-primary transition">Strategies</a>
             <a href="/#why-dubai" className="text-sm hover:text-primary transition">Why Dubai</a>
-            <Link href="/properties"><a className="text-sm hover:text-primary transition font-semibold">Properties</a></Link>
-            <Link href="/blog"><a className="text-sm hover:text-primary transition">Blog</a></Link>
-            <Link href="/contact"><a className="text-sm hover:text-primary transition">Contact</a></Link>
+            <Link href="/properties" className="text-sm hover:text-primary transition font-semibold">Properties</Link>
+            <Link href="/blog" className="text-sm hover:text-primary transition">Blog</Link>
+            <Link href="/contact" className="text-sm hover:text-primary transition">Contact</Link>
           </div>
           <Button className="bg-primary hover:bg-primary/90">Book Consultation</Button>
         </div>
